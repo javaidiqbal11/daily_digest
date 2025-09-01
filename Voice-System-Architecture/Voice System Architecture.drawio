@@ -1,0 +1,220 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36" version="28.1.1" pages="2">
+  <diagram name="Page-1" id="N1mvID7s4s3JobMafgr0">
+    <mxGraphModel dx="3143" dy="2358" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="5rx3g_xLHDlJMexTELbb-1" value="" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="279" y="-172" width="436" height="316" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-2" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;User (Caller)&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;(SIP / PSTN)&lt;/font&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="424" y="-125" width="153" height="81" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-5" value="&lt;b&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;Ingress&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="433.5" y="-173" width="127" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-8" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Telephony Provider&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;(e.g. Twilio) - Webhook OR Audio URL&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="313" y="69" width="326" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.374;entryY=0.031;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="5rx3g_xLHDlJMexTELbb-2" target="5rx3g_xLHDlJMexTELbb-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-19" value="" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="275.5" y="200" width="442.5" height="294" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-23" value="&lt;span&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;1. Voice call (SIP/PSTN)&lt;/font&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=0" parent="1" vertex="1">
+          <mxGeometry x="472.5" y="25" width="215.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="5rx3g_xLHDlJMexTELbb-24" target="5rx3g_xLHDlJMexTELbb-29" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-24" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;API Gateway / Load Balancer&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;+ WAF&lt;/font&gt;&lt;/div&gt;" style="html=1;whiteSpace=wrap;aspect=fixed;shape=isoRectangle;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+          <mxGeometry x="313" y="205" width="313" height="187.8" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.518;entryY=0.034;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="5rx3g_xLHDlJMexTELbb-8" target="5rx3g_xLHDlJMexTELbb-24" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-27" value="&lt;span&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;2. Webhook / audio URL&lt;/font&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=0" parent="1" vertex="1">
+          <mxGeometry x="477" y="158" width="228" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-28" value="&lt;span&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;Edge&lt;/font&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="339" y="216" width="55" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-29" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Auth Service&amp;nbsp;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;(signature / API key)&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="325" y="437" width="222" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-31" value="" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="273" y="533" width="425" height="473" as="geometry" />
+        </mxCell>
+        <mxCell id="BD7oVM9FkgRpwNkXH_0O-86" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" parent="1" source="5rx3g_xLHDlJMexTELbb-38" target="5rx3g_xLHDlJMexTELbb-70" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-38" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Voice Input Service&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;POST / voice-input&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;(validate, store metadata, enqueue&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#bdecbb, #1f2f1e);strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="349.75" y="565" width="287.5" height="69" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-39" value="&lt;span&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;Processing&lt;/font&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="453.5" y="535" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-40" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;3. HTTPS + signature check&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=0" parent="1" vertex="1">
+          <mxGeometry x="477" y="396" width="237.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-42" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;4. POST /voice-input (audio URL or stram)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=0" parent="1" vertex="1">
+          <mxGeometry x="396" y="503" width="382" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-43" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Message, Queue&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;(Job queue, DLQ)&lt;/font&gt;&lt;/div&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="304.5" y="664" width="153.5" height="93" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.319;entryY=0.009;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="5rx3g_xLHDlJMexTELbb-38" target="5rx3g_xLHDlJMexTELbb-43" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-47" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;6. Enqueue transcription job (job_id)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=0" parent="1" vertex="1">
+          <mxGeometry x="425" y="654" width="270" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5rx3g_xLHDlJMexTELbb-48" target="5rx3g_xLHDlJMexTELbb-53" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="545" y="876" />
+              <mxPoint x="563" y="876" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-48" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;STT Workers (autoscale group)&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;POST /transcribe&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;(audio -&amp;gt; text)&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=light-dark(#bf4e4a, #d7817e);" parent="1" vertex="1">
+          <mxGeometry x="288" y="793" width="343" height="63" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-51" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;7. Worker pulls job&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;POST /transcribe (audio URL)&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=0" parent="1" vertex="1">
+          <mxGeometry x="442" y="737" width="229" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.299;entryY=0.015;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="5rx3g_xLHDlJMexTELbb-43" target="5rx3g_xLHDlJMexTELbb-48" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5rx3g_xLHDlJMexTELbb-53" target="5rx3g_xLHDlJMexTELbb-56" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-53" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Sentiment Workers (autoscale group)&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;POST /analyze-sentiment&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;(text -&amp;gt; sentiment)&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="301.75" y="896" width="348.5" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-55" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;9. Enqueue text for sentiment&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=0" parent="1" vertex="1">
+          <mxGeometry x="272.5" y="861" width="257" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-56" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Client /Dashboard&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;(callbacks, APU poll)&lt;/font&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="572" y="1119" width="201" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-73" value="" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="827" y="843" width="493" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-60" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Dead Letter Queue&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;(failed jobs)&lt;/font&gt;&lt;/div&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="840" y="898" width="213" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;dashed=1;" parent="1" source="5rx3g_xLHDlJMexTELbb-48" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="631" y="818" />
+              <mxPoint x="972" y="818" />
+              <mxPoint x="972" y="904" />
+            </Array>
+            <mxPoint x="972" y="904" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-70" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Monitoring / Metrics&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;(health, latency, errors)&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="1103" y="917" width="206" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-74" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Altering / Pager&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="992" y="1094" width="185" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-76" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.855;exitY=1;exitDx=0;exitDy=-4.35;exitPerimeter=0;entryX=0.16;entryY=0.079;entryDx=0;entryDy=0;entryPerimeter=0;dashed=1;" parent="1" source="5rx3g_xLHDlJMexTELbb-60" target="5rx3g_xLHDlJMexTELbb-74" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-77" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.888;entryY=0.062;entryDx=0;entryDy=0;entryPerimeter=0;dashed=1;" parent="1" source="5rx3g_xLHDlJMexTELbb-70" target="5rx3g_xLHDlJMexTELbb-74" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-78" value="" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-471" y="863" width="625" height="362" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-79" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Metadata DB&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;(transcripts, sentiment, job status)&lt;/font&gt;&lt;/div&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="-462" y="1056" width="272" height="136" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-80" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Encrypted Blob Storage&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;(audio files)&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#A1E8B6;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="-94" y="1105" width="228" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-83" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5rx3g_xLHDlJMexTELbb-81" target="5rx3g_xLHDlJMexTELbb-80" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-81" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;KMS / Key Store&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;(encryption keys)&lt;/font&gt;&lt;/div&gt;" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=25;verticalAlign=top;align=center;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="-282" y="898" width="245" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-86" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.666;entryY=0.034;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="5rx3g_xLHDlJMexTELbb-81" target="5rx3g_xLHDlJMexTELbb-79" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-87" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.145;entryY=0;entryDx=0;entryDy=4.35;entryPerimeter=0;" parent="1" source="5rx3g_xLHDlJMexTELbb-48" target="5rx3g_xLHDlJMexTELbb-79" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BD7oVM9FkgRpwNkXH_0O-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;dashed=1;" parent="1" source="5rx3g_xLHDlJMexTELbb-53" target="5rx3g_xLHDlJMexTELbb-70" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BD7oVM9FkgRpwNkXH_0O-4" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;8. Persist transcript + metadata&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=0" parent="1" vertex="1">
+          <mxGeometry x="559" y="866" width="281" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BD7oVM9FkgRpwNkXH_0O-5" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;11. Notify client / callback&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;(or webhook)&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=0;rotation=0;" parent="1" vertex="1">
+          <mxGeometry x="450" y="1020" width="241" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BD7oVM9FkgRpwNkXH_0O-6" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;raise alert&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;(operator review)&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=0" parent="1" vertex="1">
+          <mxGeometry x="829" y="1018" width="171" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BD7oVM9FkgRpwNkXH_0O-7" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;alerts&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=0" parent="1" vertex="1">
+          <mxGeometry x="1162" y="1018" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BD7oVM9FkgRpwNkXH_0O-8" value="&lt;b&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;Observability &amp;amp; Ops&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=0" parent="1" vertex="1">
+          <mxGeometry x="958" y="856" width="282" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BD7oVM9FkgRpwNkXH_0O-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0.417;entryY=-0.004;entryDx=0;entryDy=0;entryPerimeter=0;dashed=1;" parent="1" source="5rx3g_xLHDlJMexTELbb-48" target="5rx3g_xLHDlJMexTELbb-70" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BD7oVM9FkgRpwNkXH_0O-10" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;5. Store audio (encrypted)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=0" parent="1" vertex="1">
+          <mxGeometry x="862" y="776" width="267" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BD7oVM9FkgRpwNkXH_0O-11" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;manual reply / retry&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=0" parent="1" vertex="1">
+          <mxGeometry x="669" y="812" width="171" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BD7oVM9FkgRpwNkXH_0O-14" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;metrics &amp;amp; liveness&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=0;rotation=90;" parent="1" vertex="1">
+          <mxGeometry x="1135" y="684" width="171" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BD7oVM9FkgRpwNkXH_0O-15" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;10. Persist sentiment result&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=0" parent="1" vertex="1">
+          <mxGeometry x="313" y="976" width="254" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BD7oVM9FkgRpwNkXH_0O-16" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Persistence&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="-392" y="866" width="171" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BD7oVM9FkgRpwNkXH_0O-17" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;encryption keys&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="-223" y="1006" width="171" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BD7oVM9FkgRpwNkXH_0O-82" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.114;entryY=-0.004;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="5rx3g_xLHDlJMexTELbb-29" target="5rx3g_xLHDlJMexTELbb-38" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5rx3g_xLHDlJMexTELbb-82" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5rx3g_xLHDlJMexTELbb-38" target="5rx3g_xLHDlJMexTELbb-80" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Go2d1Fw3astq-K4ihOSy-3" value="" style="shape=waypoint;sketch=0;size=6;pointerEvents=1;points=[];fillColor=#fff2cc;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;strokeColor=#d6b656;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="37.5" y="919" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Go2d1Fw3astq-K4ihOSy-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.855;entryY=0;entryDx=0;entryDy=4.35;entryPerimeter=0;" edge="1" parent="1" source="5rx3g_xLHDlJMexTELbb-53" target="5rx3g_xLHDlJMexTELbb-79">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="384" y="594" as="sourcePoint" />
+            <mxPoint x="117" y="1099" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="318" y="1001" />
+              <mxPoint x="-229" y="1001" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="s44Oz0C4bkLFWCNZ8IX6" name="Page-2">
+    <mxGraphModel dx="1050" dy="557" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
