@@ -1,7 +1,7 @@
-````markdown
+
 # Daily Digest
 
-A central hub for your daily writing, journaling, and incremental updates. This repository captures day-to-day entries and continues to grow organically—made to be simple, accessible, and continuously evolving.
+A central hub for your daily writing, journaling, and incremental updates. This repository captures day-to-day entries and continues to grow organically, made to be simple, accessible, and continuously evolving.
 
 ---
 
