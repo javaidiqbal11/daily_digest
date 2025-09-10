@@ -1,61 +1,114 @@
 import os
-import cv2
-import numpy as np
-from hashlib import md5
+import random
+import shutil
+from tensorflow.keras.preprocessing.image import ImageDataGenerator, img_to_array, load_img, array_to_img
 
-# Input and output directories
-input_folder = "Normal"
-output_folder = "Normalized"
+THRESHOLD = 20000  # per class limit
+IMG_SIZE = (224, 224)  # resize target for normalization
 
-# Create output folder if it doesn't exist
-os.makedirs(output_folder, exist_ok=True)
 
-# Set to store hashes of unique images
-unique_hashes = set()
-count = 0
+def save_normalized_image(img_path, save_path):
+    """Load, resize, normalize, and save image."""
+    img = load_img(img_path, target_size=IMG_SIZE)
+    x = img_to_array(img) / 255.0  # normalize to [0, 1]
+    img = array_to_img(x)          # convert back to image
+    img.save(save_path)
 
-# >>> You can change this value to control how many images to process
-max_images = 50   # e.g., process only first 50 images. Set None for all.
 
-def normalize_image(img, size=(128, 128)):
-    """Convert to grayscale, resize, and normalize pixel values."""
-    img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)   # convert to grayscale
-    img = cv2.resize(img, size)                   # resize
-    img = img.astype("float32") / 255.0           # normalize [0,1]
-    return img
+def balance_dataset(input_dir, output_dir, threshold=THRESHOLD):
+    """
+    Balances dataset classes by downsampling or upsampling each class
+    to exactly `threshold` images. Normalizes images before saving.
+    """
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
 
-def image_to_hash(img):
-    """Generate a hash for the image (based on pixel values)."""
-    return md5(img.tobytes()).hexdigest()
+    datagen = ImageDataGenerator(
+        rotation_range=30,
+        width_shift_range=0.1,
+        height_shift_range=0.1,
+        shear_range=0.2,
+        zoom_range=0.2,
+        horizontal_flip=True,
+        fill_mode="nearest"
+    )
 
-# Get all files in the folder
-all_files = os.listdir(input_folder)
+    for class_name in os.listdir(input_dir):
+        class_path = os.path.join(input_dir, class_name)
+        if not os.path.isdir(class_path):
+            continue
 
-# If max_images is set, restrict the number of files
-if max_images is not None:
-    all_files = all_files[:max_images]
+        output_class_path = os.path.join(output_dir, class_name)
+        os.makedirs(output_class_path, exist_ok=True)
 
-# Loop through selected images
-for filename in all_files:
-    filepath = os.path.join(input_folder, filename)
+        images = os.listdir(class_path)
+        num_images = len(images)
 
-    # Read image
-    img = cv2.imread(filepath)
-    if img is None:
-        continue  # skip unreadable files
+        print(f"\nProcessing class: {class_name} ({num_images} images)")
 
-    # Normalize
-    norm_img = normalize_image(img)
+        # ---------------- Downsampling ----------------
+        if num_images > threshold:
+            selected_images = random.sample(images, threshold)
+            for img in selected_images:
+                src = os.path.join(class_path, img)
+                dst = os.path.join(output_class_path, img)
+                save_normalized_image(src, dst)
+            print(f"✔ Downsampled {class_name} to {threshold} normalized images.")
 
-    # Hash
-    img_hash = image_to_hash(norm_img)
+        # ---------------- Upsampling ----------------
+        elif num_images < threshold:
+            # Copy & normalize all available images first
+            for img in images:
+                src = os.path.join(class_path, img)
+                dst = os.path.join(output_class_path, img)
+                save_normalized_image(src, dst)
 
-    # Save only if unique
-    if img_hash not in unique_hashes:
-        unique_hashes.add(img_hash)
-        count += 1
-        save_path = os.path.join(output_folder, f"unique_{count}.png")
-        cv2.imwrite(save_path, (norm_img * 255).astype("uint8"))
+            img_index = 0
+            while len(os.listdir(output_class_path)) < threshold:
+                img_name = images[img_index % num_images]
+                img_path = os.path.join(class_path, img_name)
 
-print(f"✅ Normalization done! {count} unique images saved in '{output_folder}'")
+                try:
+                    img = load_img(img_path, target_size=IMG_SIZE)
+                    x = img_to_array(img) / 255.0  # normalize
+                    x = x.reshape((1,) + x.shape)
+
+                    prefix = os.path.splitext(img_name)[0]
+                    save_prefix = f"{prefix}_aug"
+
+                    for batch in datagen.flow(
+                        x, batch_size=1,
+                        save_to_dir=output_class_path,
+                        save_prefix=save_prefix,
+                        save_format="jpg"
+                    ):
+                        if len(os.listdir(output_class_path)) >= threshold:
+                            break
+                except Exception as e:
+                    print(f"⚠ Error processing {img_name}: {e}")
+
+                img_index += 1
+
+            print(f"✔ Upsampled {class_name} to {threshold} normalized images.")
+
+        # ---------------- Exact case ----------------
+        else:
+            for img in images:
+                src = os.path.join(class_path, img)
+                dst = os.path.join(output_class_path, img)
+                save_normalized_image(src, dst)
+            print(f"✔ {class_name} already has {threshold} images. Normalized and copied.")
+
+
+def main():
+    # 👉 set your input and output dataset folders here
+    input_dir = "C:/Users/Administrator/Downloads/daily_digest/image-normalize/dataset"
+    output_dir = "C:/Users/Administrator/Downloads/daily_digest/image-normalize/dataset_balanced"
+    threshold = 20000
+
+    balance_dataset(input_dir, output_dir, threshold)
+
+
+if __name__ == "__main__":
+    main()
 

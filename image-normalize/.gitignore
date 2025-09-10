@@ -1,4 +1,4 @@
 # Ignore virtual environment folder
 ven/
-Normal/
-Normalized/
+dataset/
+dataset_balanced/ 
