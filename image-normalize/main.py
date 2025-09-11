@@ -1,6 +1,5 @@
 import os
 import random
-import shutil
 from tensorflow.keras.preprocessing.image import ImageDataGenerator, img_to_array, load_img, array_to_img
 
 THRESHOLD = 20000  # per class limit
@@ -8,11 +7,11 @@ IMG_SIZE = (224, 224)  # resize target for normalization
 
 
 def save_normalized_image(img_path, save_path):
-    """Load, resize, normalize, and save image."""
+    """Load, resize, normalize, and save image as JPG."""
     img = load_img(img_path, target_size=IMG_SIZE)
     x = img_to_array(img) / 255.0  # normalize to [0, 1]
-    img = array_to_img(x)          # convert back to image
-    img.save(save_path)
+    img = array_to_img(x)          # convert back to PIL image
+    img.save(save_path, format="JPEG")
 
 
 def balance_dataset(input_dir, output_dir, threshold=THRESHOLD):
@@ -41,7 +40,8 @@ def balance_dataset(input_dir, output_dir, threshold=THRESHOLD):
         output_class_path = os.path.join(output_dir, class_name)
         os.makedirs(output_class_path, exist_ok=True)
 
-        images = os.listdir(class_path)
+        images = [f for f in os.listdir(class_path)
+                  if f.lower().endswith((".jpg", ".jpeg", ".png"))]
         num_images = len(images)
 
         print(f"\nProcessing class: {class_name} ({num_images} images)")
@@ -49,22 +49,24 @@ def balance_dataset(input_dir, output_dir, threshold=THRESHOLD):
         # ---------------- Downsampling ----------------
         if num_images > threshold:
             selected_images = random.sample(images, threshold)
-            for img in selected_images:
+            for i, img in enumerate(selected_images):
                 src = os.path.join(class_path, img)
-                dst = os.path.join(output_class_path, img)
+                dst = os.path.join(output_class_path, f"{os.path.splitext(img)[0]}_{i}.jpg")
                 save_normalized_image(src, dst)
             print(f"✔ Downsampled {class_name} to {threshold} normalized images.")
 
         # ---------------- Upsampling ----------------
         elif num_images < threshold:
             # Copy & normalize all available images first
-            for img in images:
+            for i, img in enumerate(images):
                 src = os.path.join(class_path, img)
-                dst = os.path.join(output_class_path, img)
+                dst = os.path.join(output_class_path, f"{os.path.splitext(img)[0]}_{i}.jpg")
                 save_normalized_image(src, dst)
 
             img_index = 0
-            while len(os.listdir(output_class_path)) < threshold:
+            aug_count = len(os.listdir(output_class_path))
+
+            while aug_count < threshold:
                 img_name = images[img_index % num_images]
                 img_path = os.path.join(class_path, img_name)
 
@@ -74,15 +76,14 @@ def balance_dataset(input_dir, output_dir, threshold=THRESHOLD):
                     x = x.reshape((1,) + x.shape)
 
                     prefix = os.path.splitext(img_name)[0]
-                    save_prefix = f"{prefix}_aug"
 
-                    for batch in datagen.flow(
-                        x, batch_size=1,
-                        save_to_dir=output_class_path,
-                        save_prefix=save_prefix,
-                        save_format="jpg"
-                    ):
-                        if len(os.listdir(output_class_path)) >= threshold:
+                    for batch in datagen.flow(x, batch_size=1):
+                        aug_img = array_to_img(batch[0])   # back to PIL
+                        save_name = f"{prefix}_aug_{aug_count}.jpg"
+                        save_path = os.path.join(output_class_path, save_name)
+                        aug_img.save(save_path, format="JPEG")
+                        aug_count += 1
+                        if aug_count >= threshold:
                             break
                 except Exception as e:
                     print(f"⚠ Error processing {img_name}: {e}")
@@ -93,9 +94,9 @@ def balance_dataset(input_dir, output_dir, threshold=THRESHOLD):
 
         # ---------------- Exact case ----------------
         else:
-            for img in images:
+            for i, img in enumerate(images):
                 src = os.path.join(class_path, img)
-                dst = os.path.join(output_class_path, img)
+                dst = os.path.join(output_class_path, f"{os.path.splitext(img)[0]}_{i}.jpg")
                 save_normalized_image(src, dst)
             print(f"✔ {class_name} already has {threshold} images. Normalized and copied.")
 
@@ -111,4 +112,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
