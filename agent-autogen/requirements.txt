@@ -1,0 +1,6 @@
+pyautogen 
+openai 
+python-dotenv
+gradio
+
+# pip install -U "autogen-agentchat" "autogen-ext[openai]"

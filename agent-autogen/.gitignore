@@ -1,0 +1,130 @@
+<<<<<<< HEAD
+.env
+=======
+# ======================
+# Python
+# ======================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pkl
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Extras 
+test.py
+usage_logs.csv 
+readme.md 
+data/
+backup.py
+
+
+
+# Virtual environments
+ven/
+venv/
+.ven
+.venv/
+venv/
+ENV/
+env.bak/
+env/
+.env
+
+# Byte-compiled / optimized / DLL files
+*.so
+*.dll
+*.dylib
+
+# ======================
+# Logs & Reports
+# ======================
+*.log
+*.csv
+*.tsv
+*.out
+*.err
+*.pid
+*.gz
+
+# Project-specific logs/results
+token_log.csv
+aiqa_report.csv
+
+# ======================
+# Testing
+# ======================
+.coverage
+htmlcov/
+.cache/
+.nox/
+.pytest_cache/
+.tox/
+.junit.xml
+
+# ======================
+# Jupyter / IPython
+# ======================
+.ipynb_checkpoints
+*.ipynb
+
+# ======================
+# IDE / Editors
+# ======================
+# VS Code
+.vscode/
+*.code-workspace
+
+# PyCharm / JetBrains
+.idea/
+*.iml
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Others
+*.swp
+*.swo
+*.DS_Store
+Thumbs.db
+
+# ======================
+# Environment / Secrets
+# ======================
+# Local environment variables
+.env.local
+.env.production
+.env.staging
+.env.test
+
+# dotenv override
+.env.*
+
+# ======================
+# Databases / Dumps
+# ======================
+*.db
+*.sqlite3
+*.mongo.json
+*.bson
+dump.rdb
+
+# ======================
+# Misc
+# ======================
+# Lock files
+poetry.lock
+Pipfile.lock
+yarn.lock
+package-lock.json
+
+# Generated files
+*.bak
+*.tmp
+*.orig
+>>>>>>> 4da0f3e0e3799d2077af93c4be5a3058fb14f2ee
