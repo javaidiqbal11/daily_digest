@@ -103,8 +103,8 @@ def balance_dataset(input_dir, output_dir, threshold=THRESHOLD):
 
 def main():
     # 👉 set your input and output dataset folders here
-    input_dir = "C:/Users/Administrator/Downloads/daily_digest/image-normalize/dataset"
-    output_dir = "C:/Users/Administrator/Downloads/daily_digest/image-normalize/dataset_balanced"
+    input_dir = "C:/Users/Administrator/Downloads/daily_digest/image-normalize/data/test"
+    output_dir = "C:/Users/Administrator/Downloads/daily_digest/image-normalize/normalized-data/test"
     threshold = 20000
 
     balance_dataset(input_dir, output_dir, threshold)
